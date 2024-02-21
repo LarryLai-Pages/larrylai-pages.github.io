@@ -28,6 +28,11 @@ jobs:
       name: github-pages
     runs-on: ubuntu-latest
     steps:
+      - name: setup-node@v4
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'v20.1.1-v8-canary20221103f7e2421e91'
+
       - name: Checkout
         uses: actions/checkout@v4
 
