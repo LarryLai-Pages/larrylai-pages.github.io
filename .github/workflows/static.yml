@@ -38,16 +38,25 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Prepare and deploy
-        run: |
-          npm install
-          npm run ng -- deploy --no-silent
+          node-version: '16'
+  
+      - name: Install dependencies
+        run: npm install
+  
+      - name: Run tests
+        run: npm run test:headless
+  
+      - name: Build
+        run: npm run build:prod
+  
+      - name: Deploy
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist/larrylai-pages.github.io
+          enable_jekyll: false
