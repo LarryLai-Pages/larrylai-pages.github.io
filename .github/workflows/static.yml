@@ -47,9 +47,9 @@ jobs:
         run: npm run build
 
       - name: Use Node.js
-        - uses: actions/setup-node@v4
-          with:
-            node-version: 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Deploy
         if: success()
