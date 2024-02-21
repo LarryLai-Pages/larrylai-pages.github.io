@@ -46,8 +46,11 @@ jobs:
       - name: Build
         run: npm run build
 
-        runs:
-          using: 'node16'
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
       - name: Deploy
         if: success()
         uses: peaceiris/actions-gh-pages@v3
