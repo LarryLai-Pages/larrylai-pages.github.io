@@ -47,8 +47,9 @@ jobs:
         run: npm run build
 
       - name: Deploy
+        using: 'node20'
         if: success()
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: dist/larrylai-pages.github.io
