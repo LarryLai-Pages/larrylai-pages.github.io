@@ -44,11 +44,12 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
+        run:
         # 創建並切換到 gh-pages 分支
-        run: git checkout -b gh-pages
+        git checkout -b gh-pages
         # 將 dist 文件夾下的文件添加到 gh-pages 分支
-        run: git add -f dist
+        git add -f dist
         # 提交到本地分支
-        run: git commit -m 'created gh-pages'
+        git commit -m 'created gh-pages'
         # 推送到遠程分支
-        run: git push --prefix dist/larrylai-pages.github.io origin gh-pages
+        git push --prefix dist/larrylai-pages.github.io origin gh-pages
