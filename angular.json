@@ -93,12 +93,7 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options": {
-            "baseHref": "/",
-            "name": "Larry.Lai",
-            "email": "awen221@gmail.com"
-          }
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
