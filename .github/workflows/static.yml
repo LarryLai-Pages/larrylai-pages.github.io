@@ -46,8 +46,9 @@ jobs:
       - name: Build
         run: npm run build
 
+        runs:
+          using: 'node16'
       - name: Deploy
-        using: 'node20'
         if: success()
         uses: peaceiris/actions-gh-pages@v3
         with:
