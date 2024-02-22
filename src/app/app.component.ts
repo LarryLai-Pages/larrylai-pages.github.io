@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { config } from 'src/config';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'larrylai-pages.github.io';
+  constructor(
+    private Title:Title
+  ){
+    this.Title.setTitle(this.title)
+  }
+  get title():string{return config.title}
+
 }

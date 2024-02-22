@@ -1,0 +1,14 @@
+.mat-black{
+  background-color: black;
+  color: white;
+}
+
+mat-toolbar{
+  height:60px;
+  flex-direction: row;
+  text-align: center;
+}
+/* 元件靠右 */
+.example-spacer {
+  flex: 1 1 auto;
+}
